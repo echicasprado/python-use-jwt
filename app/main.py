@@ -32,3 +32,7 @@ async def login(user:Usuario):
         return JSONResponse(content=create_token(user.dict()), status_code=200)
     else:
         return JSONResponse(content="Error en autenticación", status_code=400)
+    
+@app.get("/data", tags=["Datos"])
+async def get_data():
+    return JSONResponse(content={"message":"contenido"}, status_code=200) 
